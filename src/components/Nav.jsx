@@ -7,9 +7,9 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <Link to="/">Inicio</Link>
-      <Link to="/contactos">Contactos</Link>
-      <Link to="/favoritos">Favoritos</Link>
+      <Link to="/">Home</Link>
+      <Link to="/contacts">Contacts</Link>
+      <Link to="/favorites">Favorites</Link>
       <button onClick={() => setNewSection(!newSection)}>
         {newSection ? 'Nueva vista general' : '+ Nueva'}
       </button>
