@@ -1,0 +1,36 @@
+.title-container {
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+    margin-left: 20px; /* Ajusta el margen izquierdo */
+  }
+  
+  .title-text {
+    color: #ffffff; /* Cambia el color del texto a blanco*/
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+    margin: 0;
+  }
+  
+  .title-line::before {
+    content: '';
+    display: block;
+    width: 100px; /* Ancho de la línea */
+    height: 2px; /* Grosor de la línea */
+    background-color: lightgreen; /* Color de la línea */
+    margin-right: 10px; /* Espacio entre el título y la línea */
+  }
+  
+  
+  .title-text {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+  }
+
+    .favorite-card-container {
+    display: flex;
+    justify-content: space-around;
+  }

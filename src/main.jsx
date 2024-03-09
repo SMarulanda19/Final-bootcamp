@@ -1,10 +1,9 @@
 import React from 'react';
 import  ReactDOM  from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from './pages/home/Home.jsx';
-// import Contact from './pages/contacts/Contacts.jsx';
-import ContactsList from './pages/contacts/Contacts.jsx';
-import Favorite from './pages/favorites/Favorite.jsx';
+import Home from './components/Home.jsx';
+import ContactsList from './components/Contacts.jsx';
+import Favorite from './components/Favorite.jsx';
 // import New from './pages/new/New.jsx';
 
 const router = createBrowserRouter([
