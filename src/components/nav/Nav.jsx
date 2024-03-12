@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <Link to="/">Home</Link>
+      <Link to="/Home">Home</Link>
       <Link to="/contacts">Contacts</Link>
       <Link to="/favorites">Favorites</Link>
       <button onClick={() => setNewSection(!newSection)}>

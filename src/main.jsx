@@ -1,28 +1,35 @@
 import React from 'react';
 import  ReactDOM  from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from './components/Home.jsx';
-import ContactsList from './components/Contacts.jsx';
-import Favorite from './components/Favorite.jsx';
+import Home from './pages/home/Home.jsx';
+import Contacts from './pages/contacts/Contacts.jsx';
+import Favorite from './pages/favorites/Favorite.jsx';
+import App from "./App.jsx";
 // import New from './pages/new/New.jsx';
+
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <App />,
+  },
+
+  {
+    path: "/Home",
     element: <Home />,
-    children: [ {
-      path: "/contacts",
-      element: <ContactsList />,
-    },
-    {
-      path: "/favorites",
-      element: <Favorite />,
-    },]
-  }
- 
+  },
+
+  {
+    path: "/contacts",
+    element: <Contacts />,
+  },
+  {
+    path: "/favorites",
+    element: <Favorite />,
+  },
   // {
-  //   path: "/new",
-  //   element: <New />,
+  //   path: "/newContact",
+  //   element: <NewContact />,
   // },
 ]);
 
