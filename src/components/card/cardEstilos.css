@@ -1,33 +1,35 @@
 .card-main {
-  width: 250px;
-  border: 3px solid #ababab;
-  border-radius: 4px;
-  padding: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  border: 3px solid white; /* Borde blanco */
+  border-radius: 10px; /* Ajuste el radio del borde */
+  padding: 20px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4); /* Sombra que hace resaltar */
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: white; /* Fondo blanco */
 }
 
 .card-image {
-  width: 100px;
-  height: 100px;
+  width: 100px; /* Ajusta el tamaño de la imagen */
+  height: 100px; /* Ajusta el tamaño de la imagen */
   object-fit: cover;
   border-radius: 50%;
   overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para la imagen */
 }
 
 .card-name {
-  font-size: 20px;
+  font-size: 18px; /* Tamaño del nombre */
   font-weight: bold;
   margin-bottom: 8px;
 }
 
 .card-email {
-  font-size: 16px;
-  margin-bottom: 16px;
+  font-size: 16px; /* Tamaño del correo */
+  margin-bottom: 12px;
 }
 
 .button-container {
@@ -35,9 +37,3 @@
   justify-content: space-between;
   width: 100%;
 }
-
-
-
-
-
-

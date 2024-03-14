@@ -1,42 +1,44 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    color: none;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    padding: 10px 20px;
-  }
-  
-  .navbar a {
-    color: #000; /* Cambiar el color de los enlaces a negro */
-    text-decoration: none;
-    margin: 0 10px;
-    padding: 5px;
-    border-radius: 5px;
-    border: none;
-  }
-  
-  .navbar a:hover {
-    background-color: #f5f5f5;
-    color: #4CAF50; /* Cambiar el color del texto al pasar el mouse por encima */
-    cursor: pointer;
-  }
-  
-  .navbar button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .navbar button:hover {
-    background-color: #45a049;
-  }
-  
-  .hidden {
-    display: none;
-  }
+  display: flex;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  width: auto;
+  margin: 0;
+}
+
+.ContainerImage {
+  width: auto;
+  margin-left: 10px;
+}
+
+.Imagenav {
+  width: 110px;
+  height: 50px;
+}
+
+.ButtonNew {
+  background-color: #C1D72F;
+  border-radius: 10px;
+  height: 36px;
+  padding: 0 10px;
+  margin-right: 10px;
+}
+
+.a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  margin-right: 15px; /* Espacio entre los enlaces */
+}
+
+.a:last-child {
+  margin-right: 0; /* Elimina el margen del último enlace */
+}
+
+.a:active,
+.a:hover {
+  color: #C1D72F;
+}

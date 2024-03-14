@@ -1,12 +1,12 @@
 import React from 'react';
 import './FavoriteStyles.css'
+import Nav from '../../components/nav/Nav'
 const Favorite = () => {
   return (
     <>
-      <div className='title-container'>
-        {/* <h1 className='title-text title-line'>favorites </h1> */}
-        <h1>My Favorites</h1>
-      </div>
+    <Nav/>
+    <h1 className='title'>My Favorites</h1>
+    <hr />
     </>
   );
 };

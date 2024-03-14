@@ -16,7 +16,6 @@ function Card({ user }) {
         {user.first_name} {user.last_name}
       </p>
       <p className="card-email">{user.email}</p>
-      <hr />
       <div className="button-container">
         <ButtonAdd/>
         <ButtonDelete/>

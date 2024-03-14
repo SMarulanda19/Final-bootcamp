@@ -1,29 +1,26 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
+import Image from "../../Image/Globant.png"
 
 const Navbar = () => {
-  const [newSection, setNewSection] = useState(false);
-
+  
   return (
-    <nav className="navbar">
-      <Link to="/Home">Home</Link>
-      <Link to="/contacts">Contacts</Link>
-      <Link to="/favorites">Favorites</Link>
-      <button onClick={() => setNewSection(!newSection)}>
-        {newSection ? 'Nueva vista general' : '+ Nueva'}
+    <>
+    <div className="navbar">
+      <div className='ContainerImage'>
+        <img className='Imagenav' src={Image} alt="Logo" />
+      </div>
+      <div>
+      <Link to="/" className='a'>Home</Link>
+      <Link to="/contacts" className='a'>Contacts</Link>
+      <Link to="/favorites" className='a'>Favorites</Link>
+      <button className='ButtonNew' onClick={() => navigate("/newContact")}>
+      + Nueva   
       </button>
-      {newSection && (
-        <>
-          <Link to="/nueva-vista-general" className="hidden">
-            Nueva vista general
-          </Link>
-          <Link to="/nuevo" className="hidden">
-            + Nueva
-          </Link>
-        </>
-      )}
-    </nav>
+      </div>
+    </div>
+    </>
   );
 };
 

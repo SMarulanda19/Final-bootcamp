@@ -1,9 +1,10 @@
 import React from 'react';
 import { MdFavorite } from "react-icons/md";
+import './buttonAddStyles.css'
 
-const ButtonAdd = () => {
+const ButtonAdd = ({addClick}) => {
     return(
-        <button className="btn-add"><MdFavorite /></button>
+        <button className="btn-add" onClick={addClick} ><MdFavorite /></button>
     )
 }
 

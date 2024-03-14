@@ -1,12 +1,13 @@
 import React from 'react';
+import Nav from '../../components/nav/Nav'
 function Home() {
   return (
     <>
-      <dir>
+      <Nav/>
         <h1>
           Home
         </h1>
-      </dir>
+        <hr />
     </>
   );
 }

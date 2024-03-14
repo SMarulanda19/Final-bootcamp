@@ -1,0 +1,6 @@
+.user-info-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 37px; /* Espacio entre cada tarjeta */
+  }
+  
