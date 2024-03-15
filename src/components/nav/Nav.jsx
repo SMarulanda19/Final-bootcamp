@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
 import Image from "../../Image/Globant.png"
 
-const Navbar = () => {
-  
+
+
+const Navbar = ({onClick}) => {
   return (
     <>
     <div className="navbar">
@@ -15,8 +15,9 @@ const Navbar = () => {
       <Link to="/" className='a'>Home</Link>
       <Link to="/contacts" className='a'>Contacts</Link>
       <Link to="/favorites" className='a'>Favorites</Link>
-      <button className='ButtonNew' onClick={() => navigate("/newContact")}>
-      + Nueva   
+      <button className="ButtonNew" onClick = {onClick}>
+          {" "}
+        + New
       </button>
       </div>
     </div>

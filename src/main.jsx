@@ -4,28 +4,29 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from './pages/home/Home.jsx';
 import Contacts from './pages/contacts/Contacts.jsx';
 import Favorite from './pages/favorites/Favorite.jsx';
-import App from "./App.jsx";
-import NewContact from "./pages/newContact/NewContact.jsx"
+import Layout from './layouts/Layouts.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:  <Home />,
-  },
+    element:  <Layout />,
+    children:[
+      {
+        path: "/",
+        element: <Home />,
+      },
 
-  {
-    path: "/contacts",
-    element: <Contacts />,
-  },
-  {
-    path: "/favorites",
-    element: <Favorite />,
-  },
-  {
-    path: "/newContact",
-    element: <NewContact />,
-  },
+      {
+        path: "/contacts",
+        element: <Contacts />,
+      },
+      {
+        path: "/favorites",
+        element: <Favorite />,
+      },
+      
+    ]},
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

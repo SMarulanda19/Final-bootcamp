@@ -1,0 +1,30 @@
+.ButtonSubmit{
+    color: rgb(54, 52, 52);
+    background-color: white;
+    border-style: solid;
+    width: 30%;
+}
+
+.containerCampos{
+    width: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 5%;
+    
+}
+
+.campos{
+    height: 29px;
+    border-radius: 5px;
+    border-style: solid;
+    background-color:#e7f58c;
+    width: 100%;
+    
+    
+}
+.form{
+    background-color: #C1D72F;
+    width: 500px;
+    align-items: center;
+    margin: 0 auto;
+}
