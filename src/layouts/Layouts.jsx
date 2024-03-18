@@ -1,22 +1,17 @@
 import Nav from "../components/nav/Nav"
 import NewContact from "../pages/newContact/NewContact"
 import { Outlet } from "react-router"
-import {useState} from 'react'
+import {useSelector} from 'react-redux'
 
 
 
 const Layout = () => {
-    const [isNewContactVisible, setisNewContactVisible] = useState(false);
-
-    const isvisible = () => { 
-        setisNewContactVisible(!isNewContactVisible)
-    }
-
+    const form = useSelector((state) => state.form.isNewContactVisible)
 
     return(
         <>
-        <Nav  onClick = {isvisible}/>
-        {isNewContactVisible &&  <NewContact></NewContact>}
+        <Nav />
+        {form &&  <NewContact/>}
         <Outlet></Outlet>
         </>
     )

@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom';
 import './navbar.css';
 import Image from "../../Image/Globant.png"
+import { useDispatch } from 'react-redux';
+import {isFormVisible} from '../../store/slideFormUser';
+// Dispatch para actualizar un estado
+
+const Navbar = () => {
+  const dispatch = useDispatch()
 
 
-
-const Navbar = ({onClick}) => {
   return (
     <>
     <div className="navbar">
@@ -15,7 +19,7 @@ const Navbar = ({onClick}) => {
       <Link to="/" className='a'>Home</Link>
       <Link to="/contacts" className='a'>Contacts</Link>
       <Link to="/favorites" className='a'>Favorites</Link>
-      <button className="ButtonNew" onClick = {onClick}>
+      <button className="ButtonNew" onClick = {() => dispatch(isFormVisible())}>
           {" "}
         + New
       </button>
