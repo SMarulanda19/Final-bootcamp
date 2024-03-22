@@ -7,10 +7,14 @@ import { toggleFavoriteState } from "../../store/AppSlices";
 
 const Favorite = () => {
   const dispatch = useDispatch();
-  const usersList = useSelector((state) => state.users.userList.filter((user) => user.favorite));
+  const usersList = useSelector((state) => state.users.userList);
+  const UsuariosFavoritos = useSelector((state) => state.users.UsuariosFavoritos)
   console.log(usersList)
-
+  console.log("Estos son los Favoritos: ",UsuariosFavoritos)
   
+  const favoriteContacts = usersList.filter(user => UsuariosFavoritos.includes(user.id));
+
+
   const handleAddFavorite = (userId) => {
     dispatch(toggleFavoriteState(userId));
   };
@@ -19,9 +23,9 @@ const Favorite = () => {
     <>
     <h1 className='title'>My Favorites</h1> 
     <hr />
-    {usersList.length > 0 ? (
+    {favoriteContacts.length > 0 ? (
         <div>
-          {usersList.map((user) => (
+          {favoriteContacts.map((user) => (
             <Card
               key={user.id}
               user={user}

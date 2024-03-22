@@ -6,8 +6,8 @@ import { setPages } from '../../store/AppSlices'; // Aquí se importa setPages
 
   const Pagination = () => {
   const dispatch = useDispatch();
-  const paginationtotal = useSelector((state) => state.form.TotalPages);
-  const Pages = useSelector((state) => state.form.Pages);
+  const paginationtotal = useSelector((state) => state.users.TotalPages);
+  const Pages = useSelector((state) => state.users.Pages);
 
   const handlePage = (n) => {
     const nextPage = Pages + n;

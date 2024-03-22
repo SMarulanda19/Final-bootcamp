@@ -8,5 +8,16 @@ const api = axios.create({
 
 export const getUsers = (page) => {
   return api.get(`users?page=${page}`)
+  
 }
-export default getUsers;
+
+
+export const deleteUser = (id) => {
+  return api.delete('users', id)
+}
+
+
+
+// export default getUsers;
+
+

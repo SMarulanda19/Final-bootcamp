@@ -1,4 +1,6 @@
 import React from 'react';
+import UserList from '../../components/userList/UserList'
+import Favorite from '../favorites/Favorite';
 function Home() {
   return (
     <>
@@ -6,6 +8,10 @@ function Home() {
           Home
         </h1>
         <hr />
+    <UserList></UserList>
+    <hr />
+    <Favorite></Favorite>
+
     </>
   );
 }

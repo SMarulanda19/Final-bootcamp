@@ -6,7 +6,7 @@ import {useSelector} from 'react-redux'
 
 
 const Layout = () => {
-    const form = useSelector((state) => state.form.isNewContactVisible)
+    const form = useSelector((state) => state.users.isNewContactVisible)
 
     return(
         <>

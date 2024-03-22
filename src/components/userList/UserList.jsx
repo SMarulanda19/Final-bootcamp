@@ -8,11 +8,11 @@ import "./userListStyles.css";
 export default function UserInfoList() {
   const dispatch = useDispatch();
   const usersList = useSelector((state) => state.users.userList); // Obtener la lista de usuarios del estado de Redux
-  const Pages = useSelector( (state) => state.form.Pages);
+  const Pages = useSelector( (state) => state.users.Pages);
   console.log(Pages)
 
 
-
+  
   useEffect(() => {
     dispatch(getUsers1(Pages));
     console.log(Pages)
