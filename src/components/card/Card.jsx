@@ -3,7 +3,7 @@ import './cardEstilos.css';
 import ButtonAdd from '../../components/buttonAdd/ButtonAdd';
 import ButtonDelete from '../../components/buttonDelete/ButtonDelete';
 
-function Card({ user, toggleFavorite }) { // Asegúrate de recibir toggleFavorite como prop
+function Card({ user }) { 
   // Verificar si user existe y si tiene la propiedad avatar
   if (!user || !user.avatar ) {
     return null; // Si no hay user o avatar, no renderizar nada
@@ -17,7 +17,7 @@ function Card({ user, toggleFavorite }) { // Asegúrate de recibir toggleFavorit
       </p>
       <p className="card-email">{user.email}</p>
       <div className="button-container">
-        <ButtonAdd onClick={() => toggleFavorite(user.id)} /> 
+        <ButtonAdd userId = {user.id} /> 
         <ButtonDelete />
       </div>
     </div>

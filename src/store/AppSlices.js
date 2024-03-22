@@ -25,18 +25,15 @@ export const usersSlice = createSlice({
     reducers: {
       toggleFavoriteState: (state, action) => {
         const userId = action.payload;  
-        const userToUpdate = state.userList.find(user => user.id === userId);
-        console.log(userToUpdate)
-        if (userToUpdate) {
-          userToUpdate.favorite = !userToUpdate.favorite;
-        }
+        state.userList = state.userList.map(user => ({...user,favorite: user.id === userId?
+        !user.favorite: user.favorite}))
       }
     },
     extraReducers: (builder) => {
       builder.addCase(getUsers1.fulfilled, (state, action) => {
+      console.log("no termina :8")
       state.userList = action.payload.map(user => ({ ...user, favorite: false }));
-         
-        
+
       });
     }
   });

@@ -18,10 +18,6 @@ export default function UserInfoList() {
     console.log(Pages)
   }, [Pages]);
 
-  useEffect(() => {
-    dispatch(getUsers1(Pages));
-    console.log(Pages)
-  }, []);
 
   const handleAddFavorite = (userId) => {
     dispatch(toggleFavoriteState(userId));
