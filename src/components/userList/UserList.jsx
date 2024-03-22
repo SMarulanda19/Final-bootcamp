@@ -1,35 +1,31 @@
-import { useEffect, useState,useMemo } from "react";
-import  Card  from "../card/Card";
-import getUsers from "../../services/getUsers";
-import "./userListStyles.css"
-
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Card from "../card/Card";
+import { getUsers, toggleFavoriteState } from "../../store/AppSlices";
+import "./userListStyles.css";
 
 export default function UserInfoList() {
-  const [usersList, setUsersList] = useState([]);
+  const dispatch = useDispatch();
+  const usersList = useSelector((state) => state.form.UsuariosBase); // Obtener la lista de usuarios del estado de Redux
 
   useEffect(() => {
-    getUsers()
-      .then((users) => setUsersList(users.data.map(
-        user =>  ({ ...user, favorite: false})
-        )))
-      .catch((err) => console.log(err));
-  }, []);
+    dispatch(getUsers());
+  }, [dispatch]);
 
-
-  const favorites  = useMemo(() =>
-  usersList.filter((user) => user.favorite ),
-  [usersList])
-
-  console.log({favorites, usersList});
-
-  // Añadir funcion de Añadir a favoritos
+  const handleAddFavorite = (userId) => {
+    dispatch(toggleFavoriteState(userId));
+  };
 
   return (
     <>
       {usersList.length > 0 ? (
-          <div className="user-info-list-container">
+        <div className="user-info-list-container">
           {usersList.map((user) => (
-            <Card key={user.id} user={user} />
+            <Card
+              key={user.id}
+              user={user}
+              handleAddFavorite={handleAddFavorite} 
+            />
           ))}
         </div>
       ) : (

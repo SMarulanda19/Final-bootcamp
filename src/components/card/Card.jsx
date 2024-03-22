@@ -3,11 +3,15 @@ import './cardEstilos.css';
 import ButtonAdd from '../../components/buttonAdd/ButtonAdd';
 import ButtonDelete from '../../components/buttonDelete/ButtonDelete';
 
-function Card({ user }) {
+function Card({ user, handleAddFavorite }) {
   // Verificar si user existe y si tiene la propiedad avatar
   if (!user || !user.avatar ) {
     return null; // Si no hay user o avatar, no renderizar nada
   }
+
+  const handleAddClick = () => {
+    handleAddFavorite(user.id);
+  };
 
   return (
     <div className="card-main" key={user.id}>
@@ -17,8 +21,8 @@ function Card({ user }) {
       </p>
       <p className="card-email">{user.email}</p>
       <div className="button-container">
-        <ButtonAdd/>
-        <ButtonDelete/>
+        <ButtonAdd onClick={handleAddClick} /> {/* Pasa el manejador de clic */}
+        <ButtonDelete />
       </div>
     </div>
   );
