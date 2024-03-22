@@ -1,12 +1,22 @@
 import React from 'react';
 import './FavoriteStyles.css'
-import UserList from '../../components/userList/UserList';
+import { useSelector } from 'react-redux';
+import Card from '../../components/card/Card'
+
+
 const Favorite = () => {
+
+  const usersList = useSelector((state) => state.users.userList.filter((user) => user.favorite));
+  console.log(usersList)
+
   return (
     <>
-    <h1 className='title'>My Favorites</h1>
-    <UserList></UserList>
+    <h1 className='title'>My Favorites</h1> 
     <hr />
+    <Card>
+
+    </Card>
+
     </>
   );
 };
