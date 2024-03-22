@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import formSlice from './slideFormUser.js'
+import formSlice from './AppSlices.js'
 
 export default configureStore({
   reducer: {

@@ -1,7 +1,12 @@
 import axios from "axios";
 
-const getUsers = async () => {
-  const response = await axios.get("https://reqres.in/api/users?page=1");
-  return response.data;
-};
+
+const api = axios.create({
+  baseURL: 'https://reqres.in/api/',
+})
+
+
+export const getUsers = (page) => {
+    return api.get(`users?page=${page}`)
+}
 export default getUsers;

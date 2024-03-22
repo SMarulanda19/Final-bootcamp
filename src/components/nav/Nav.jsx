@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import './navbar.css';
 import Image from "../../Image/Globant.png"
 import { useDispatch } from 'react-redux';
-import {isFormVisible} from '../../store/slideFormUser';
+import {isFormVisible} from '../../store/AppSlices';
 // Dispatch para actualizar un estado
 
 const Navbar = () => {
