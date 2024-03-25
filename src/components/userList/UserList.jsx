@@ -10,8 +10,6 @@ export default function UserInfoList() {
   const usersList = useSelector((state) => state.users.userList); // Obtener la lista de usuarios del estado de Redux
   const Pages = useSelector( (state) => state.users.Pages);
   console.log(Pages)
-
-
   
   useEffect(() => {
     dispatch(getUsers1(Pages));

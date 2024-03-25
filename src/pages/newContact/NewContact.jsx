@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './FornStyles.css'
-
+import axios from 'axios';
 
  const NewContact = () => {
   const [formData, setFormData] = useState({
@@ -10,8 +10,9 @@ import './FornStyles.css'
     resolved: false
   });
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     const { name, value, type, checked } = e.target;
+
     setFormData({
       ...formData,
       [name]: type === 'checkbox' ? checked : value
@@ -20,16 +21,24 @@ import './FornStyles.css'
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(formData);
     try {
-      await axios.post('https://reqres.in/api/users', formData);
+      
+      const res = await axios.post('https://reqres.in/api/users', formData);
+      
+      console.log(res.data)
+      
+      // anadir este nuevo usuario a lista state
+      // como no se 
+
       alert('Contacto creado exitosamente');
-    
       setFormData({
         FirstName: '',
         LastName: '',
-        description: '',
+        email: '',
         resolved: false
       });
+
     } catch (error) {
       console.error('Error al crear contacto:', error);
     }
@@ -38,48 +47,48 @@ import './FornStyles.css'
   return (
     <>
     <form className='form' onSubmit={handleSubmit}>
-      <div className='containerCampos'>
-        
-        <input
-            type="text"
-            className='campos'
-            name="title"
-            value={formData.title}
-            onChange={handleChange}
-            required
-            minLength="6"
-            maxLength="18"
-            placeholder='First name'
-          />
+    
+    <div className='containerCampos'>
+
+      {/* Firtname */}
+      <input
+          type="text"
+          className='campos'
+          name="FirstName"
+          onChange={handleChange}
+          minLength="6"
+          maxLength="18"
+          placeholder='First name'
+        />
       </div>
+
+      {/* Lastname */}
       <div className='containerCampos'>
-        
-        <input
-            type="text"
-            className='campos'
-            name="title"
-            value={formData.title}
-            onChange={handleChange}
-            required
-            minLength="6"
-            maxLength="18"
-            placeholder='Last name'
-          />
+      <input
+          type="text"
+          className='campos'
+          name="LastName"
+          onChange={handleChange}
+          minLength="6"
+          maxLength="18"
+          placeholder='Last name'
+        />
       </div>
+
+      {/* Email */}
       <div className='containerCampos'>
-        
-        <input
-            type="email"
-            className='campos'
-            name="title"
-            value={formData.title}
-            onChange={handleChange}
-            required
-            minLength="6"
-            maxLength="18"
-            placeholder='Email'
-          />
+
+      <input
+          type="email"
+          className='campos'
+          name="Email"
+          onChange={handleChange}
+          minLength="6"
+          maxLength="18"
+          placeholder='Email'
+        />
       </div>
+
       <div className='containerCampos'>
         <input
             type="checkbox"

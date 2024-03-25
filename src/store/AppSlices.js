@@ -51,6 +51,7 @@ export const usersSlice = createSlice({
       toggleFavoriteState: (state, action) => {
         const userId = action.payload;
         state.userList = state.userList.map(user => ({...user,favorite: user.id === userId?
+
         !user.favorite: user.favorite}))
         const index = state.UsuariosFavoritos.indexOf(userId);
         if (index === -1) {
