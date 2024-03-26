@@ -1,14 +1,22 @@
 import React, { useState } from 'react';
 import './FornStyles.css'
 import axios from 'axios';
+import { useSelector } from 'react-redux';
+import { addUser } from '../../store/AppSlices';
+import { useDispatch } from 'react-redux'; 
 
  const NewContact = () => {
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
-    FirstName: '',
-    LastName: '',
-    Email: '',
+
+    id: Math.floor(Math.random() * 1000),
+    avatar:`https://reqres.in/img/faces/${Math.floor(Math.random() * 12) + 1}-image.jpg`,
+    first_name: '',
+    last_name: '',
+    email: '',
     resolved: false
   });
+
 
   const handleChange = e => {
     const { name, value, type, checked } = e.target;
@@ -24,17 +32,18 @@ import axios from 'axios';
     console.log(formData);
     try {
       
-      const res = await axios.post('https://reqres.in/api/users', formData);
-      
-      console.log(res.data)
-      
-      // anadir este nuevo usuario a lista state
-      // como no se 
+      // const res = await axios.post('https://reqres.in/api/users', formData);
+      // console.log(res.data)
+      dispatch(addUser(formData));
 
+      // anadir este nuevo usuario a lista state
+      // obtener lista de usuarios
       alert('Contacto creado exitosamente');
+
       setFormData({
-        FirstName: '',
-        LastName: '',
+        id:null,
+        first_name: '',
+        last_name: '',
         email: '',
         resolved: false
       });
@@ -54,7 +63,7 @@ import axios from 'axios';
       <input
           type="text"
           className='campos'
-          name="FirstName"
+          name="first_name"
           onChange={handleChange}
           minLength="6"
           maxLength="18"
@@ -62,12 +71,12 @@ import axios from 'axios';
         />
       </div>
 
-      {/* Lastname */}
+      {/* last_name */}
       <div className='containerCampos'>
       <input
           type="text"
           className='campos'
-          name="LastName"
+          name="last_name"
           onChange={handleChange}
           minLength="6"
           maxLength="18"
@@ -75,17 +84,16 @@ import axios from 'axios';
         />
       </div>
 
-      {/* Email */}
+      {/* email */}
       <div className='containerCampos'>
 
       <input
           type="email"
           className='campos'
-          name="Email"
+          name="email"
           onChange={handleChange}
           minLength="6"
-          maxLength="18"
-          placeholder='Email'
+          placeholder='email'
         />
       </div>
 

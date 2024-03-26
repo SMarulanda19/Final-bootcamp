@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getUsers,deleteUser } from '../services/getUsers';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
+
 export const getUsers1 = createAsyncThunk(
   "users/getUsers",
   async (Pages, thunkAPI) => {
@@ -44,21 +45,33 @@ export const usersSlice = createSlice({
     Pages: 1,
     TotalPages: 3,
     UsuariosFavoritos: [],
-    
+    usersForm: [],
+
     },
    
     reducers: {
+
+      addUser: (state, action) => {
+        state.usersForm.push(action.payload); // Agrega el nuevo usuario a la lista de usuarios
+      },
+
+      // logica de Favoritos
       toggleFavoriteState: (state, action) => {
         const userId = action.payload;
         state.userList = state.userList.map(user => ({...user,favorite: user.id === userId?
 
         !user.favorite: user.favorite}))
         const index = state.UsuariosFavoritos.indexOf(userId);
+
         if (index === -1) {
           state.UsuariosFavoritos.push(userId);
         } else {
           state.UsuariosFavoritos.splice(index, 1);
         }
+
+
+      // para hacer visible el Formulario
+
       },
       isFormVisible: (state) => {
         state.isNewContactVisible = !state.isNewContactVisible
@@ -93,7 +106,9 @@ export const usersSlice = createSlice({
 
 
 // Exportar acciones y reductores
-export const { toggleFavoriteState,isFormVisible, setPages } = usersSlice.actions;
+export const { toggleFavoriteState,isFormVisible, setPages,addUser} = usersSlice.actions;
+export const selectUserList = state => state.users.userList;
+export const selectUserFormList = state => state.users.usersForm;
 
 // Exportar los reductores combinados
 export const reducers = {
