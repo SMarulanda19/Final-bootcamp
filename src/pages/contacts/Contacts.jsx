@@ -6,8 +6,10 @@ const Contacts = () => {
   return (
     <>
     <h1>Contacts</h1>
-    <hr />
+    <hr className='line' />
+    <br />
     <UserList/>
+    <br />
     <Pagination/>
     </>
   )

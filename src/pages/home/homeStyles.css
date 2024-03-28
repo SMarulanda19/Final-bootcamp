@@ -8,3 +8,8 @@
     position: relative; /* Asegura que z-index funcione correctamente */
     z-index: 1; /* Ajusta el orden de apilamiento de la línea */
 }
+
+h1 {
+    position: relative; /* Asegura que z-index funcione correctamente */
+    z-index: 0; /* Ajusta el orden de apilamiento del texto "Home" */
+}

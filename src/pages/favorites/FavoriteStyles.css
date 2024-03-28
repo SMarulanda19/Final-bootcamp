@@ -34,3 +34,18 @@
     display: flex;
     justify-content: space-around;
   }
+
+  .container-favorites {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 37px; /* Espacio entre cada tarjeta */
+  }
+
+  .line {
+    border-color: #C1D72F;
+    border-width: 2px; /* Ajusta el grosor de la línea según sea necesario */
+    width: 50%; /* Establece la anchura a la mitad del tamaño horizontal */
+    background-color: transparent; /* Establece el color de fondo transparente */
+    box-shadow: none; /* Elimina cualquier sombra que se esté aplicando */
+    margin: 0 auto 0 0;
+}

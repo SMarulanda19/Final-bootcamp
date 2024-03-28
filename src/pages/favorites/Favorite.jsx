@@ -3,6 +3,7 @@ import './FavoriteStyles.css'
 import { useSelector, useDispatch } from 'react-redux';
 import Card from '../../components/card/Card'
 import { toggleFavoriteState } from "../../store/AppSlices";
+import { BsEmojiDizzy } from "react-icons/bs";
 
 
 const Favorite = () => {
@@ -22,9 +23,10 @@ const Favorite = () => {
   return (
     <>
     <h1 className='title'>My Favorites</h1> 
-    <hr />
+    <hr className='line' />
+    <br />
     {favoriteContacts.length > 0 ? (
-        <div>
+        <div className='container-favorites'>
           {favoriteContacts.map((user) => (
             <Card
               key={user.id}
@@ -34,7 +36,7 @@ const Favorite = () => {
           ))}
         </div>
       ) : (
-        <p>Loading...</p>
+        <p><BsEmojiDizzy /></p>
       )}
     </>
   );

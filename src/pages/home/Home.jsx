@@ -1,15 +1,17 @@
 import React from 'react';
 import UserList from '../../components/userList/UserList'
 import Favorite from '../favorites/Favorite';
+import './homeStyles.css'
 function Home() {
   return (
     <>
-        <h1>
+        <h1 >
           Home
         </h1>
-        <hr />
+        <hr  className='line'/>
+        <br />
     <UserList></UserList>
-    <hr />
+    <br  />
     <Favorite></Favorite>
 
     </>
