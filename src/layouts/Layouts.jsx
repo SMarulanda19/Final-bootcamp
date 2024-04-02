@@ -1,3 +1,4 @@
+
 import Nav from "../components/nav/Nav"
 import NewContact from "../pages/newContact/NewContact"
 import { Outlet } from "react-router"
