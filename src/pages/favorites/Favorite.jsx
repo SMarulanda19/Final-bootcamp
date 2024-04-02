@@ -1,5 +1,5 @@
 import React from 'react';
-import './FavoriteStyles.css'
+import './FavoriteStyles1.css'
 import { useSelector, useDispatch } from 'react-redux';
 import Card from '../../components/card/Card'
 import { toggleFavoriteState } from "../../store/AppSlices";
@@ -36,8 +36,9 @@ const Favorite = () => {
           ))}
         </div>
       ) : (
-        <p><BsEmojiDizzy /></p>
+        <p classname ="No-favorites"><BsEmojiDizzy /> No Favorites yet</p>
       )}
+    
     </>
   );
 };

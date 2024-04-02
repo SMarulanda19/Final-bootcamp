@@ -13,7 +13,8 @@ const ButtonDelete = ({userId}) => {
         dispatch(deleteUser1(id))
     }
     return(
-        <button className="btn-delete" onClick={() => deleteClick (userId)}  ><MdDelete /></button>
+        <button data-testid="delete-button" className="btn-delete" onClick={() => deleteClick(userId)}><MdDelete /></button>
+
     )
 }
 

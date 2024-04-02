@@ -49,3 +49,13 @@
     box-shadow: none; /* Elimina cualquier sombra que se esté aplicando */
     margin: 0 auto 0 0;
 }
+
+.No-favorites {
+  text-align: center; /* Centra el texto horizontalmente */
+  font-size: 2.5rem; /* Ajusta el tamaño del texto */
+}
+
+.No-favorites svg {
+  font-size: 3.5rem; /* Ajusta el tamaño del ícono */
+}
+
