@@ -17,6 +17,7 @@ function Card({ user }) {
       </p>
       <p className="card-email">{user.email}</p>
       <div className="button-container">
+        
         <ButtonAdd userId = {user.id} /> 
         <ButtonDelete userId = {user.id}  />
       </div>

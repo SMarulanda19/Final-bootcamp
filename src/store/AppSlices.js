@@ -19,7 +19,7 @@ export const getUsers1 = createAsyncThunk(
 );
 
 
-
+// elimina usuarios
 export const deleteUser1 = createAsyncThunk(
   "users/deleteUser",
   async (userId, thunkAPI) => {

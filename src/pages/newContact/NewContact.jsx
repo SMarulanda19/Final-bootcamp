@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import './FornStyles.css'
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-import { addUser } from '../../store/AppSlices';
+import { addUser, toggleFavoriteState } from '../../store/AppSlices';
 import { useDispatch } from 'react-redux'; 
+
 
  const NewContact = () => {
   const dispatch = useDispatch();
@@ -31,10 +32,11 @@ import { useDispatch } from 'react-redux';
     e.preventDefault();
     console.log(formData);
     try {
-      
-      // const res = await axios.post('https://reqres.in/api/users', formData);
-      // console.log(res.data)
+    
       dispatch(addUser(formData));
+      if(formData.resolved){
+       dispatch( toggleFavoriteState(id))
+      }
 
       // anadir este nuevo usuario a lista state
       // obtener lista de usuarios
