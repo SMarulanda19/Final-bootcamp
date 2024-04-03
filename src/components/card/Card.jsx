@@ -19,7 +19,7 @@ function Card({ user }) {
       <div className="button-container">
         
         <ButtonAdd userId = {user.id} /> 
-        <ButtonDelete userId = {user.id}  />
+        <ButtonDelete userId={user.id} isApiUser={user.isApiUser} />
       </div>
     </div>
   );

@@ -55,6 +55,11 @@ export const usersSlice = createSlice({
         state.usersForm.push(action.payload); // Agrega el nuevo usuario a la lista de usuarios
       },
 
+      deleteUserFromForm: (state, action) => {
+        const userId = action.payload;
+        state.usersForm = state.usersForm.filter(user => user.id !== userId); // Elimina el usuario del formulario
+    },
+
       // logica de Favoritos
       toggleFavoriteState: (state, action) => {
         const userId = action.payload;
@@ -106,7 +111,7 @@ export const usersSlice = createSlice({
 
 
 // Exportar acciones y reductores
-export const { toggleFavoriteState,isFormVisible, setPages,addUser} = usersSlice.actions;
+export const { toggleFavoriteState, isFormVisible, setPages, addUser, deleteUserFromForm } = usersSlice.actions;
 export const selectUserList = state => state.users.userList;
 export const selectUserFormList = state => state.users.usersForm;
 
