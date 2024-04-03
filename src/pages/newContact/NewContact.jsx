@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import './FornStyles.css'
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-import { addUser, toggleFavoriteState } from '../../store/AppSlices';
+import { addUser } from '../../store/AppSlices';
 import { useDispatch } from 'react-redux'; 
-
 
  const NewContact = () => {
   const dispatch = useDispatch();
@@ -34,9 +33,6 @@ import { useDispatch } from 'react-redux';
     try {
     
       dispatch(addUser(formData));
-      if(formData.resolved){
-       dispatch( toggleFavoriteState(id))
-      }
 
       // anadir este nuevo usuario a lista state
       // obtener lista de usuarios

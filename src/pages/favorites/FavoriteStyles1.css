@@ -39,7 +39,16 @@
     display: flex;
     flex-wrap: wrap;
     gap: 37px; /* Espacio entre cada tarjeta */
+    margin-bottom: 20px; /* Margen inferior para separar de la siguiente lista */
   }
+  
+  .container-favorites-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 37px;
+  }
+  
+
 
   .line {
     border-color: #C1D72F;
