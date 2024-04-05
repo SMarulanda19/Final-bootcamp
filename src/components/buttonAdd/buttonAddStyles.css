@@ -19,3 +19,7 @@
   color: #C1D72F; /* Cambia el color del icono a verde */
   margin-right: 5px; /* Ajusta el espacio entre el icono y el texto */
 }
+
+.btn-add-favorites{
+  color: #dfee7c; 
+}
